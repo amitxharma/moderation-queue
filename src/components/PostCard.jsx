@@ -57,8 +57,8 @@ const PostCard = ({ post }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -100 }}
-      className={`card p-6 hover:bg-gray-50 transition-all duration-300 ${
-        isSelected ? 'ring-2 ring-blue-500 bg-blue-50' : ''
+      className={`card p-6 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 ${
+        isSelected ? 'ring-2 ring-blue-500 bg-blue-50 dark:bg-blue-900/30' : ''
       } ${isDisabled ? 'opacity-60' : ''}`}
     >
       <div className="flex items-start gap-4">
@@ -75,12 +75,12 @@ const PostCard = ({ post }) => {
           <div className="flex items-start justify-between mb-3">
             <div className="flex-1">
               <h3 
-                className="text-lg font-semibold text-gray-900 cursor-pointer hover:text-blue-600 transition-colors"
+                className="text-lg font-semibold text-gray-900 dark:text-white cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 onClick={handlePreview}
               >
                 {post.title}
               </h3>
-              <div className="flex items-center gap-3 mt-2 text-sm text-gray-600">
+              <div className="flex items-center gap-3 mt-2 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-1">
                   <User size={14} />
                   <span>{post.author.username}</span>
@@ -99,7 +99,7 @@ const PostCard = ({ post }) => {
             </div>
           </div>
 
-          <p className="text-gray-700 mb-4 line-clamp-2">{post.content}</p>
+          <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">{post.content}</p>
 
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -107,7 +107,7 @@ const PostCard = ({ post }) => {
               <span className={`px-2 py-1 rounded-lg text-xs font-medium ${getReasonColor(post.reportedReason)}`}>
                 {post.reportedReason}
               </span>
-              <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium">
+              <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg text-xs font-medium">
                 {post.reportCount} reports
               </span>
             </div>
@@ -117,7 +117,7 @@ const PostCard = ({ post }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handlePreview}
-                className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-lg transition-all"
               >
                 <Eye size={16} />
                 View

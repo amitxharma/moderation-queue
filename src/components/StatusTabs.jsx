@@ -14,21 +14,21 @@ const StatusTabs = () => {
   ];
 
   return (
-    <div className="flex space-x-1 bg-gray-100 p-1 rounded-2xl">
+    <div className="flex space-x-1 bg-gray-100 dark:bg-gray-800 p-1 rounded-2xl transition-colors duration-300">
       {tabs.map((tab) => (
         <button
           key={tab.id}
           onClick={() => dispatch(setFilter(tab.id))}
           className={`relative px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
             filter === tab.id
-              ? 'text-blue-600'
-              : 'text-gray-600 hover:text-gray-900'
+              ? 'text-blue-600 dark:text-blue-400'
+              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
           }`}
         >
           {filter === tab.id && (
             <motion.div
               layoutId="activeTab"
-              className="absolute inset-0 bg-white rounded-xl shadow-sm"
+              className="absolute inset-0 bg-white dark:bg-gray-700 rounded-xl shadow-sm"
               initial={false}
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
@@ -38,8 +38,8 @@ const StatusTabs = () => {
             {tab.label}
             <span className={`px-2 py-0.5 rounded-full text-xs ${
               filter === tab.id
-                ? 'bg-blue-100 text-blue-600'
-                : 'bg-gray-200 text-gray-600'
+                ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400'
+                : 'bg-gray-200 dark:bg-gray-600 text-gray-600 dark:text-gray-400'
             }`}>
               {tab.count}
             </span>

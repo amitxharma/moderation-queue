@@ -56,7 +56,7 @@ const EmptyState = ({ filter }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="text-xl font-semibold text-gray-900 mb-2"
+        className="text-xl font-semibold text-gray-900 dark:text-white mb-2"
       >
         {title}
       </motion.h3>
@@ -65,7 +65,7 @@ const EmptyState = ({ filter }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="text-gray-600 text-center max-w-md"
+        className="text-gray-600 dark:text-gray-400 text-center max-w-md"
       >
         {description}
       </motion.p>

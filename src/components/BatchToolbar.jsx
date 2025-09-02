@@ -34,7 +34,7 @@ const BatchToolbar = () => {
         exit={{ y: 100, opacity: 0 }}
         className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40"
       >
-        <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-4">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 p-4 transition-colors duration-300">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <motion.span
@@ -72,7 +72,7 @@ const BatchToolbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleClearSelection}
-                className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-all"
+                className="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-all"
                 title="Clear selection"
               >
                 <Trash2 size={16} />

@@ -50,25 +50,25 @@ const PreviewModal = () => {
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
-          className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden transition-colors duration-300"
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-200">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center gap-4">
               <button
                 onClick={handlePrevious}
                 disabled={!canGoPrevious}
-                className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-gray-700 dark:text-gray-300"
               >
                 <ChevronLeft size={20} />
               </button>
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-gray-500 dark:text-gray-400">
                 {currentIndex + 1} of {posts.length}
               </span>
               <button
                 onClick={handleNext}
                 disabled={!canGoNext}
-                className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-gray-700 dark:text-gray-300"
               >
                 <ChevronRight size={20} />
               </button>
@@ -76,7 +76,7 @@ const PreviewModal = () => {
             
             <button
               onClick={handleClose}
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300"
             >
               <X size={20} />
             </button>
@@ -85,11 +85,11 @@ const PreviewModal = () => {
           {/* Content */}
           <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
             <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900 mb-4">
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 {selectedPostForPreview.title}
               </h1>
               
-              <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
+              <div className="flex items-center gap-4 mb-4 text-sm text-gray-600 dark:text-gray-400">
                 <div className="flex items-center gap-2">
                   <User size={16} />
                   <span className="font-medium">{selectedPostForPreview.author.username}</span>
@@ -99,7 +99,7 @@ const PreviewModal = () => {
                   <span>{formatTimeAgo(selectedPostForPreview.reportedAt)}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium">
+                  <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-lg text-xs font-medium">
                     {selectedPostForPreview.reportCount} reports
                   </span>
                 </div>
@@ -124,7 +124,7 @@ const PreviewModal = () => {
             )}
 
             <div className="prose max-w-none">
-              <p className="text-gray-700 leading-relaxed text-lg">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
                 {selectedPostForPreview.content}
               </p>
             </div>
@@ -138,9 +138,9 @@ const PreviewModal = () => {
           </div>
 
           {/* Footer */}
-          <div className="flex items-center justify-between p-6 border-t border-gray-200 bg-gray-50">
-            <div className="text-sm text-gray-500">
-              Press <kbd className="px-2 py-1 bg-white border rounded">Esc</kbd> to close
+          <div className="flex items-center justify-between p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50">
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              Press <kbd className="px-2 py-1 bg-white dark:bg-gray-700 border dark:border-gray-600 rounded text-gray-700 dark:text-gray-300">Esc</kbd> to close
             </div>
             <div className="flex items-center gap-2">
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${

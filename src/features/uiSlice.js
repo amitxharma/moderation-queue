@@ -6,6 +6,12 @@ const initialState = {
   showUndoToast: false,
   undoMessage: '',
   showKeyboardShortcuts: false,
+  confirmationDialog: {
+    isOpen: false,
+    type: null,
+    postId: null,
+    postIds: null,
+  },
 };
 
 const uiSlice = createSlice({
@@ -25,6 +31,9 @@ const uiSlice = createSlice({
     setShowKeyboardShortcuts: (state, action) => {
       state.showKeyboardShortcuts = action.payload;
     },
+    setConfirmationDialog: (state, action) => {
+      state.confirmationDialog = action.payload;
+    },
   },
 });
 
@@ -33,6 +42,7 @@ export const {
   setShowRejectModal,
   setShowUndoToast,
   setShowKeyboardShortcuts,
+  setConfirmationDialog,
 } = uiSlice.actions;
 
 export default uiSlice.reducer;

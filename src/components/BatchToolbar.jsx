@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, Trash2 } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { batchApprove, batchReject, clearSelection } from '../features/postsSlice';
-import { setShowUndoToast } from '../features/uiSlice';
+import { setShowUndoToast, setConfirmationDialog } from '../features/uiSlice';
 
 const BatchToolbar = () => {
   const dispatch = useDispatch();
@@ -17,9 +17,12 @@ const BatchToolbar = () => {
   };
 
   const handleBatchReject = () => {
-    dispatch(batchReject({ postIds: selectedPosts, reason: 'Bulk rejection by moderator' }));
-    dispatch(setShowUndoToast({ show: true, message: `${selectedPosts.length} posts rejected` }));
-    setTimeout(() => dispatch(setShowUndoToast({ show: false })), 3000);
+    dispatch(setConfirmationDialog({
+      isOpen: true,
+      type: 'reject',
+      postId: null,
+      postIds: selectedPosts,
+    }));
   };
 
   const handleClearSelection = () => {

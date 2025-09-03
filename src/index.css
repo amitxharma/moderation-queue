@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
-  
+
   html {
     transition: background-color 0.3s ease;
   }
@@ -18,19 +18,19 @@
   .btn-primary {
     @apply px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 active:scale-95;
   }
-  
+
   .btn-success {
-    @apply px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-200 transform hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-green-200;
+    @apply px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-all duration-200 transform hover:scale-105 active:scale-95 hover:shadow-sm hover:shadow-green-200;
   }
-  
+
   .btn-danger {
-    @apply px-4 py-2 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-200 transform hover:scale-105 active:scale-95 hover:shadow-lg hover:shadow-red-200;
+    @apply px-4 py-2 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-200 transform hover:scale-105 active:scale-95 hover:shadow-sm hover:shadow-red-200;
   }
-  
+
   .card {
     @apply bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-lg dark:shadow-gray-900/20 transition-all duration-300 border border-gray-100 dark:border-gray-700;
   }
-  
+
   .modal-backdrop {
     @apply fixed inset-0 bg-black bg-opacity-50 dark:bg-black dark:bg-opacity-70 backdrop-blur-sm z-50;
   }

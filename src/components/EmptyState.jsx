@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, AlertCircle, XCircle, Inbox } from 'lucide-react';
+import emptyIllustration from '../assets/empty.png';
 
 const EmptyState = ({ filter }) => {
   const getEmptyStateContent = () => {
@@ -47,9 +48,13 @@ const EmptyState = ({ filter }) => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 0.2, type: "spring", bounce: 0.5 }}
-        className={`${color} mb-4`}
+        className="mb-6"
       >
-        <Icon size={64} />
+        <img 
+          src={emptyIllustration} 
+          alt="Empty state illustration" 
+          className="w-32 h-32 object-contain opacity-80"
+        />
       </motion.div>
       
       <motion.h3
